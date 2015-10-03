@@ -30,8 +30,8 @@ app.service("Auth", function($state, $http, $window){
     var user = creatUserObj(username, password)
     $http.post('http://localhost:3000/login', user)
     .then(function(data) {
-      localStorage.setItem('userID', data.data["_id"]);
-      console.log(data);
+      localStorage.setItem('userID', data.data._id);
+      console.log('logged in: ', data);
       $state.go('index')
     })
     .catch(function(error) {

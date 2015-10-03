@@ -9,7 +9,7 @@
               {{n.value}}</p>
             <p><strong>Description:</strong>
               {{n.description}}</p>
-            <button class="btn btn-primary btn-block" ui-sref="tradeItem({userId: n.user})">Trade!</button>
+            <button class="btn btn-primary btn-block" ui-sref="tradeItem({userId: n.owner})">Trade!</button>
             <!-- <button class="btn btn-primary disabled" ng-if="!n.isAvailable">Trade!</button> -->
           </div>
         </div>
