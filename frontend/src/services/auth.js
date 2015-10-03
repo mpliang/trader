@@ -1,4 +1,4 @@
-app.service("Auth", function($state, $http){
+app.service("Auth", function($state, $http, $window){
 
   var creatUserObj = function(username, password){
     return obj = {
@@ -11,9 +11,11 @@ app.service("Auth", function($state, $http){
     var user = creatUserObj(username, password)
     $http.post('http://localhost:3000/register', user)
     .then(function(data) {
+      console.log(data);
       $state.go('index')
     })
     .catch(function(error) {
+      console.log(error);
     });
   }
 
@@ -23,12 +25,12 @@ app.service("Auth", function($state, $http){
       $state.go('login')
     })
   }
+
   this.login = function(username, password){
     var user = creatUserObj(username, password)
     $http.post('http://localhost:3000/login', user)
     .then(function(data) {
       localStorage.setItem('userID', data.data["_id"]);
-      this.username = data.data.username
       console.log(data);
       $state.go('index')
     })
