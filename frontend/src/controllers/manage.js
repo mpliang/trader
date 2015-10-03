@@ -11,7 +11,7 @@ app.controller('manageCtrl', function ($scope, $http, $state) {
 
   $scope.addItem = function (item) {
     item['owner'] = 'mike';
-    item['username'] ='mikeker3';
+    item['username'] ='mike133';
     console.log(item);
     $http.post('http://localhost:3000/item', item)
       .then(function (data) {

@@ -21,10 +21,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     templateUrl: '../pages/manage.html',
     controller: 'manageCtrl'
   })
-  .state('manageProp', {
-    url: '/manage/:propertyId',
-    templateUrl: '../pages/manageProp.html',
-    controller: 'propCtrl'
+  .state('tradeItem', {
+    url: '/user/:propertyId',
+    templateUrl: '../pages/tradeItem.html',
+    controller: 'tradeItem'
   })
 
 });
