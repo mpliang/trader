@@ -1,17 +1,30 @@
 app.service("Auth", function($state, $http){
   this.createUser = function(username, password){
-    var obj = {
-      username: username,
-      password: password
-    };
-    console.log(obj);
-    $http.post('http://localhost:3000/register', obj)
+    var user = createUserObj(username, password)
+    $http.post('http://localhost:3000/register', user)
     .then(function(data) {
-      console.log('success: ', data);
       $state.go('index')
     })
     .catch(function(error) {
-      console.log('error: ', error);
+    });
+  }
+
+  var creatUserObj = function(username, password){
+    return obj = {
+      username: username,
+      password: password
+    };
+  }
+
+  this.login = function(username, password){
+    var user = creatUserObj(username, password)
+    console.log(user);
+    $http.post('http://localhost:3000/login', user)
+    .then(function(data) {
+      console.log(data, 'loggedin');
+      $state.go('index')
+    })
+    .catch(function(error) {
     });
   }
 });
