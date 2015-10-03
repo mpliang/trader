@@ -1,4 +1,8 @@
-app.service("Auth", function($state, $http, $window){
+app.service("Auth", function($rootScope, $state, $http, $window){
+
+  this.onLogin= function(auth){
+    return auth
+  }
 
   var creatUserObj = function(username, password){
     return obj = {
@@ -22,8 +26,7 @@ app.service("Auth", function($state, $http, $window){
   this.logout = function(){
     $http.get('http://localhost:3000/logout')
     .then(function(data) {
-    localStorage.removeItem('userID')
-      console.log(data);
+      localStorage.removeItem('userID')
     })
     .catch(function(error) {
     });
@@ -35,6 +38,7 @@ app.service("Auth", function($state, $http, $window){
     $http.post('http://localhost:3000/login', user)
     .then(function(data) {
       localStorage.setItem('userID', data.data._id);
+      $rootScope.auth = true;
       console.log('logged in: ', data);
       $state.go('index')
     })
