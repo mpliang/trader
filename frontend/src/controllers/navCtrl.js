@@ -1,5 +1,5 @@
-.controller('NavCtrl', function($scope, $state, Auth){
+app.controller('NavCtrl', function($scope, $state, Auth){
 
 
 
-  };
+});
