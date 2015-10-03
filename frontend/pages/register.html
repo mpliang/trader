@@ -1,14 +1,14 @@
 <div class="jumbotron text-center">
   <h1>Create a new account</h1>
-  <form class="form-horizontal" role="form">
+  <form class="form-horizontal" role="form" ng-submit="register(username, password)">
     <div class="form-group">
       <div class="col-sm-offset-4 col-sm-4">
-        <input autofocus class="form-control" id="name" ng-model="username" placeholder="Email" type="text">
+        <input autofocus class="form-control" ng-model="username" placeholder="Username" type="text">
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-4 col-sm-4">
-        <input class="form-control" id="type" ng-model="password" type="password" placeholder="Password">
+        <input class="form-control" ng-model="password" type="password" placeholder="Password">
       </div>
     </div>
     <div class="form-group">
