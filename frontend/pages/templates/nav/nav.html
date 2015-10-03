@@ -1,0 +1,30 @@
+<body ng-controller="navCtrl">
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" ui-sref="manage">Apartment Manager</a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-show=>
+            <a ui-sref="manage">
+              <i class="fa fa-hotel"></i>
+              Manage
+            </a>
+          </li>
+          <li ng-show="isLoggedIn">
+            <a ng-click="logout()">
+              <i class="fa fa-key"></i>
+              Logout
+            </a>
+          </li>
+          <li ng-hide="isLoggedIn">
+            <a ui-sref="login">
+              <i class="fa fa-key"></i>
+              Login
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
