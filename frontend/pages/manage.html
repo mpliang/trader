@@ -17,6 +17,11 @@
           </div>
           <div class="form-group">
             <div class="col-sm-12">
+              <input autofocus class="form-control" id="picture" ng-model="item.picture" type="text" placeholder="Picture URL">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
               <input class="form-control" id="description" ng-model="item.description" placeholder="Description">
             </div>
           </div>
@@ -29,28 +34,28 @@
       </div>
     </div>
     <div class="col-sm-12 col-md-9">
-      <h3>My Items</h3>
+      <!-- <h3>My Items</h3> -->
       <div class="row">
         <div class="col-sm-6 col-md-4" ng-repeat="n in itemList track by $index">
           <div class="thumbnail">
+            <img ng-src="{{n.picture}}" id="itemThumb"/>
             <div class="caption">
               <h3>{{n.name}}</h3>
               <p>
                 <strong>Value:</strong>
-                {{n.value}}</p>
+                {{n.value | currency}}</p>
               <strong>Description:</strong>
               <p>{{n.description}}</p>
               <br>
-              <!-- <button class="btn btn-primary" ui-sref="manageProp({propertyId: n._id})">Manage</button> -->
+              <p>Available:
+                {{n.isAvailable}}
+              </p>
               <button class="btn btn-danger" ng-click="delete(n._id)">Delete</button>
+              <button class="btn btn-primary" ng-click="toggle(n._id)">Available</button>
             </div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
-
-
-
 </div>
