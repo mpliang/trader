@@ -16,24 +16,20 @@ app.service("Auth", function($state, $http){
     .catch(function(error) {
     });
   }
+
   this.logout = function(){
     $http.get('http://localhost:3000/logout')
     .then(function(data){
       $state.go('login')
     })
   }
-
-  // this.check = function() {
-  //   $http.get('http://localhost:3000/config')
-  //   .then(function(data){
-  //     console.log(data);
-  //   })
-  // }
-
   this.login = function(username, password){
     var user = creatUserObj(username, password)
     $http.post('http://localhost:3000/login', user)
     .then(function(data) {
+      localStorage.setItem('userID', data.data["_id"]);
+      this.username = data.data.username
+      console.log(data);
       $state.go('index')
     })
     .catch(function(error) {
