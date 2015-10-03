@@ -26,10 +26,5 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     templateUrl: '../pages/manageProp.html',
     controller: 'propCtrl'
   })
-  .state('tradeItem', {
-    url: '/user/:userId',
-    templateUrl: '../pages/tradeItem.html',
-    controller: 'tradeCtrl'
-  })
 
 });
