@@ -2,12 +2,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
   $stateProvider
   .state('index', {
-    url: '/',
+    url: '/index',
     templateUrl: '../pages/home.html',
     controller: 'homeCtrl'
   })
   .state('login', {
-    url: '/login',
+    url: '/',
     templateUrl: '../pages/login.html',
     controller: 'loginCtrl'
   })
