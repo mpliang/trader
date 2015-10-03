@@ -1,6 +1,4 @@
-app.controller('loginCtrl', function ($scope, Auth) {
-  $scope.message = 'Enter username and password';
-
+app.controller('loginCtrl', function ($scope, $window, Auth) {
   $scope.login = function (username, password){
     Auth.login(username, password)
   }

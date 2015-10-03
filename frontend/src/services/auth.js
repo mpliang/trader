@@ -21,9 +21,13 @@ app.service("Auth", function($state, $http, $window){
 
   this.logout = function(){
     $http.get('http://localhost:3000/logout')
-    .then(function(data){
-      $state.go('login')
+    .then(function(data) {
+    localStorage.removeItem('userID')
+      console.log(data);
     })
+    .catch(function(error) {
+    });
+    $state.go('login')
   }
 
   this.login = function(username, password){

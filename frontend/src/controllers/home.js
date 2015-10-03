@@ -8,6 +8,7 @@ app.controller('homeCtrl', function ($scope, $window, $http) {
   //     text: 'Select an item to trade',
   //     type: 'success'
   //   })
+
     $http.get('http://localhost:3000/item')
       .then(function(data) {
         console.log(data);

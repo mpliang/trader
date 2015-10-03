@@ -5,23 +5,23 @@
         <a class="navbar-brand" ui-sref="index">Trading App</a>
       </div>
       <ul class="nav navbar-nav navbar-right">
-        <li ng-show=>
-          <a ui-sref="manage">
-            <i class="fa fa-hotel"></i>
-            Manage
-          </a>
-        </li>
-        <!-- ng-show="isLoggedIn" -->
         <li >
-          <a ng-click="logout()">
+          <a href='' ng-show="auth" ng-click="logout()">
             <i class="fa fa-key"></i>
             Logout
           </a>
         </li>
-        <li ng-hide="isLoggedIn">
+        <li ng-hide="auth">
           <a ui-sref="login">
             <i class="fa fa-key"></i>
             Login
+          </a>
+        </li>
+         <!-- ng-show="auth" -->
+        <li>
+          <a ui-sref="manage">
+            <i class="fa fa-key"></i>
+            Manage Items
           </a>
         </li>
       </ul>

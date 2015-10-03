@@ -1,7 +1,8 @@
 app.controller('NavCtrl', function($scope, $state, Auth){
   $scope.logout = function (){
     Auth.logout()
+    $scope.auth = false
   }
-  $scope.userID = Auth.idea
-  // Auth.check()
+  $scope.auth = localStorage['userID']
+
 });
