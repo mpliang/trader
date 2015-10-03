@@ -1,9 +1,9 @@
 app.controller('manageCtrl', function ($scope, $http, $state) {
   $scope.message = 'Enter email and password';
-  $http.get('http://localhost:3000/item')
+  $http.get('http://localhost:3000/user/' + localStorage['userID'])
     .then(function (data) {
       console.log(data);
-      $scope.itemList = data.data;
+      $scope.itemList = data.data.items;
     })
     .catch(function (error) {
       console.log(error);
