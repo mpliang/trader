@@ -1,4 +1,4 @@
-app.service("Auth", function($state, $http){
+app.service("Auth", function($state, $http, $window){
 
   var creatUserObj = function(username, password){
     return obj = {
@@ -11,9 +11,11 @@ app.service("Auth", function($state, $http){
     var user = creatUserObj(username, password)
     $http.post('http://localhost:3000/register', user)
     .then(function(data) {
+      console.log(data);
       $state.go('index')
     })
     .catch(function(error) {
+      console.log(error);
     });
   }
   this.logout = function(){
@@ -34,9 +36,16 @@ app.service("Auth", function($state, $http){
     var user = creatUserObj(username, password)
     $http.post('http://localhost:3000/login', user)
     .then(function(data) {
+      console.log('login error:', data);
       $state.go('index')
     })
     .catch(function(error) {
+      console.log(error);
+      // $window.swal({
+      //   title: 'Error!',
+      //   text: 'Invalid Login',
+      //   type: 'danger'
+      // })
     });
   }
 });
