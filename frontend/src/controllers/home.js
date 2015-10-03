@@ -13,12 +13,14 @@ app.controller('homeCtrl', function ($scope, $window, $http) {
     _id: '1231232kjfkdlsd'
   }];
 
-  $scope.trade = function(item) {
-    $window.swal({
-      title: 'Trade',
-      text: 'Select an item to trade',
-      type: 'success'
-    })
+  // $scope.trade = function(item) {
+  //
+  //
+  //   $window.swal({
+  //     title: 'Trade',
+  //     text: 'Select an item to trade',
+  //     type: 'success'
+  //   })
     // $http.get('http://localhost:3000')
     //   .then(function(data) {
     //     console.log(data);
@@ -26,7 +28,7 @@ app.controller('homeCtrl', function ($scope, $window, $http) {
     //   .catch(function(error) {
     //     console.log(error);
     //   })
-  }
+  // }
 
 
 });
