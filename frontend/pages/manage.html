@@ -34,7 +34,7 @@
       </div>
     </div>
     <div class="col-sm-12 col-md-9">
-      <h3>My Items</h3>
+      <!-- <h3>My Items</h3> -->
       <div class="row">
         <div class="col-sm-6 col-md-4" ng-repeat="n in itemList track by $index">
           <div class="thumbnail">
@@ -46,7 +46,11 @@
               <strong>Description:</strong>
               <p>{{n.description}}</p>
               <br>
+              <p>Available:
+                {{n.isAvailable}}
+              </p>
               <button class="btn btn-danger" ng-click="delete(n._id)">Delete</button>
+              <button class="btn btn-primary" ng-click="toggle(n._id)">Available</button>
             </div>
           </div>
         </div>
