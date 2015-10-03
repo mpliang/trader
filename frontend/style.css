@@ -1,0 +1,21 @@
+#thumbnail {
+  height: auto;
+  width: auto;
+  max-width: 242px;
+  max-height: 200px;
+  /*width: 242px;
+  height: 200px;*/
+}
+
+#splash {
+  width:70%;
+  height: 50%;
+}
+
+.jumbotron {
+  padding: 10px;
+}
+
+form {
+  margin-top: 15px;
+}

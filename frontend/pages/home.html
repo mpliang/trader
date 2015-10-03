@@ -1,0 +1,16 @@
+<div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="n in allItems track by $index">
+      <div class="thumbnail">
+        <img ng-src="{{n.url}}" id="thumbnail">
+        <div class="caption">
+          <h3>{{n.name}}</h3>
+          <p><strong>Value:</strong>
+            {{n.value}}</p>
+          <p><strong>Description:</strong>
+            {{n.description}}</p>
+          <button class="btn btn-primary" ng-click="trade(n._id)">Trade!</button>
+          <!-- <button class="btn btn-primary disabled" ng-if="!n.isAvailable">Trade!</button> -->
+        </div>
+      </div>
+    </div>
+  </div>

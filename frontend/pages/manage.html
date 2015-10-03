@@ -1,0 +1,56 @@
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        <h3>Add new item</h3>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input autofocus class="form-control" id="name" ng-model="item.name" type="text" placeholder="Item Name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input autofocus class="form-control" id="value" ng-model="item.value" type="number" placeholder="Value">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <input class="form-control" id="description" ng-model="item.description" placeholder="Description">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <button class="btn btn-success btn-block" ng-click="addItem(item)" type="submit">Add Item</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-9">
+      <h3>My Items</h3>
+      <div class="row">
+        <div class="col-sm-6 col-md-4" ng-repeat="n in itemList track by $index">
+          <div class="thumbnail">
+            <div class="caption">
+              <h3>{{n.name}}</h3>
+              <p>
+                <strong>Value:</strong>
+                {{n.value}}</p>
+              <strong>Description:</strong>
+              <p>{{n.description}}</p>
+              <br>
+              <!-- <button class="btn btn-primary" ui-sref="manageProp({propertyId: n._id})">Manage</button> -->
+              <button class="btn btn-danger" ng-click="delete(n._id)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</div>

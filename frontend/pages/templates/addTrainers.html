@@ -1,0 +1,39 @@
+<div class="jumbotron text-center">
+  <h1>Add an Trainer</h1>
+
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="name">Name:</label>
+      <div class="col-sm-4">
+        <input autofocus class="form-control" ng-model="trainer.name" placeholder="Ash Ketchum" type="text" id="name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="gender">Gender:</label>
+      <div class="col-sm-2">
+        <select class="form-control" id="gender" ng-model="trainer.gender">
+          <option value="None">(Select Gender)</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="url">Image URL:</label>
+      <div class="col-sm-4">
+        <input class="form-control" ng-model="trainer.url" placeholder="http://google.com/images" type="text" id="url">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="description">Description/Notes:</label>
+      <div class="col-sm-4">
+        <textarea class="form-control" ng-model="trainer.description" id="description" rows="5"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-4">
+        <button class="btn btn-success btn-block" ng-click="add(trainer)" type="submit">Add</button>
+      </div>
+    </div>
+  </form>
+</div>

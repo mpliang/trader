@@ -1,0 +1,36 @@
+
+<div class="item item-divider">Manage Apartments</div>
+
+  <form method = "post" class="form-inline" role="form" ><!--action = "localhost:3000/"-->
+    <div class="form-group">
+      <label class="sr-only">Aptnum:</label>
+      <input type="number" class="form-control" id="aptnum">
+    </div>
+    <div class="form-group">
+      <label class="sr-only">Bedrooms:</label>
+      <input type="number" class="form-control" id="bedrooms">
+    </div>
+    <div class="form-group">
+      <label class="sr-only">Bathroom:</label>
+      <input type="number" class="form-control" id="bathrooms">
+    </div>
+    <div class="form-group">
+      <label class="sr-only" >Tenants:</label>
+      <input type="text" class="form-control" id="tenants">
+    </div>
+    <button type="submit" class="btn btn-default">Add tenant</button>
+    <div class="form-group">
+      <label class="sr-only">Rent:</label>
+      <input type="number" class="form-control" id="rent">
+    </div>
+    <div class="form-group">
+      <label class="sr-only">Square Feet:</label>
+      <input type="number" class="form-control" id="sqrft">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox">Available?</label>
+    </div>
+    <br>
+    <button ng-click="addApt()" class="btn btn-default">Create apartment</button>
+  </form>
+  </div>

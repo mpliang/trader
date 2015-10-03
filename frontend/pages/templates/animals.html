@@ -1,0 +1,61 @@
+<div class="jumbotron text-center">
+  <h1>Adopt a Pokemon Today!</h1>
+  <p>{{ message }}</p>
+
+  <div class="row">
+    <div class="col-sm-6 col-md-4" ng-repeat="n in pokemonlist track by $index">
+      <div class="thumbnail">
+        <img src="{{n.url}}" id="thumbnail">
+        <div class="caption">
+          <h3>{{n.name}}</h3>
+          <p><strong>Type:</strong>
+            {{n.type}}</p>
+          <p><strong>Species:</strong>
+            {{n.species}}</p>
+          <p><strong>Gender:</strong>
+            {{n.gender}}</p>
+          <p><strong>Description:</strong>
+            {{n.description}}</p>
+          <button class="btn btn-primary" ng-click="adopt(n._id)" ng-if="n.isAvailable">Adopt</button>
+          <button class="btn btn-primary disabled" ng-if="!n.isAvailable">Adopt</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <ul class="list-unstyled">
+    <li ng-repeat="n in pokemonlist track by $index">
+<table class="table-striped"  ng-if="n.isAvailable">
+<tr>
+         <th>Name:</td>
+         <td>{{n.name}}</td>
+       </tr>
+       <tr>
+         <th>Type:</td>
+         <td>{{n.type}}</td>
+       </tr>
+       <tr>
+         <th>Species:</td>
+         <td>{{n.species}}</td>
+       </tr>
+       <tr>
+         <th>Gender:</td>
+         <td>{{n.gender}}</td>
+       </tr>
+       <tr>
+         <th>Description:</td>
+         <td>{{n.description}}</td>
+       </tr>
+       <tr>
+         <th>Image:</td>
+         <td><img src="{{n.url}}"</td>
+       </tr>
+       <tr>
+         <td colspan="2">
+           <button class="btn btn-primary" ng-click="adopt(n._id)">Adopt</button>
+         </td>
+       </tr>
+     </table>
+    </li>
+  </ul> -->

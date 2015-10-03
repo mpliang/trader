@@ -1,0 +1,61 @@
+<div class="jumbotron text-center">
+  <h1>Add an Pokemon</h1>
+  <h3>{{message}}</h3>
+  <form class="form-horizontal" role="form">
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="name">Name:</label>
+      <div class="col-sm-4">
+        <input autofocus class="form-control" ng-model="pokemon.name" placeholder="Pikachu" type="text" id="name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="kind">Type:</label>
+      <div class="col-sm-4">
+        <input class="form-control" ng-model="pokemon.type" placeholder="Electric" type="text" id="type">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="variety">Species:</label>
+      <div class="col-sm-4">
+        <input class="form-control" ng-model="pokemon.species" placeholder="Mouse" type="text" id="species">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="gender">Gender:</label>
+      <div class="col-sm-2">
+        <select class="form-control" id="gender" ng-model="pokemon.gender">
+          <option value="None">(Select Gender)</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="available">Available:</label>
+      <div class="col-sm-2">
+        <select class="form-control" id="available" ng-model="pokemon.isAvailable">
+          <option value="None">(Select One)</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="url">Image URL:</label>
+      <div class="col-sm-4">
+        <input class="form-control" ng-model="pokemon.url" placeholder="http://google.com/images" type="text" id="url">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-4" for="description">Description/Notes:</label>
+      <div class="col-sm-4">
+        <textarea class="form-control" ng-model="pokemon.description" id="description" rows="5"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-4 col-sm-4">
+        <button class="btn btn-success btn-block" ng-click="add(pokemon)" type="submit">Add</button>
+      </div>
+    </div>
+  </form>
+</div>

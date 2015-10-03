@@ -1,0 +1,27 @@
+<div class="jumbotron">
+
+  <h1>Manage Apartments</h1>
+  <div class="row">
+    <div class="col-sm-6 col-md-3" ng-repeat="n in tenantList track by $index">
+      <div class="thumbnail" style="text-align:center">
+        <div class="caption">
+          <h3>Room
+            {{n.unitNum}}</h3>
+          <p>
+            <strong>Square Footage:</strong>
+            {{n.sqFt}}</p>
+          <p>
+            <strong>Rent per month:</strong>
+            {{n.rent}}</p>
+          <p>
+            <strong>Is available?</strong>
+            {{n.isAvail}}</p>
+          <button class="btn btn-primary" ng-click="toggle(n._id)">Rent</button>
+          <button class="btn btn-danger" ng-click="delete(n._id)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>

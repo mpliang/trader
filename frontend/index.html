@@ -1,0 +1,58 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html ng-app="tradingApp">
+  <head>
+    <link href="/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css" rel="stylesheet">
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js"></script>
+
+  </head>
+
+  <body ng-controller="loginCtrl">
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" ui-sref="index">Trading App</a>
+          </div>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a ui-sref="index">
+                <i class="fa fa-hotel"></i>
+                Home</a>
+            </li>
+            <li>
+              <a ui-sref="manage">
+                <i class="fa fa-hotel"></i>
+                Manage Items</a>
+            </li>
+            <li>
+              <a ui-sref="login">
+                <i class="fa fa-key"></i>
+                Logout</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div id="main">
+      <div ui-view></div>
+    </div>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/src/module.js"></script>
+    <script src="/src/controllers/login.js"></script>
+    <script src="/src/controllers/register.js"></script>
+    <script src="/src/controllers/manage.js"></script>
+    <script src="/src/controllers/home.js"></script>
+    <script src="/src/controllers/prop.js"></script>
+    <script src="/src/config.js"></script>
+  </body>
+
+</html>
