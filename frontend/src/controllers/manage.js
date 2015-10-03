@@ -3,13 +3,14 @@ app.controller('manageCtrl', function ($scope, $http, $state) {
   $http.get('http://localhost:3000/item')
     .then(function(data) {
       console.log(data);
-      $scope.propertiesList = data.data;
+      $scope.itemList = data.data;
     })
     .catch(function(error) {
       console.log(error);
     })
 
     $scope.addItem = function(item) {
+      item['owner'] = 'mike';
       console.log(item);
       $http.post('http://localhost:3000/item', item)
         .then(function(data) {
@@ -22,7 +23,7 @@ app.controller('manageCtrl', function ($scope, $http, $state) {
     }
 
     $scope.delete = function(propId) {
-      $http.delete('http://localhost:3000/managers/property/' + propId)
+      $http.delete('http://localhost:3000/item' + itemId)
         .then(function(data) {
           console.log(data);
           $state.go($state.current, {}, {reload: true});
