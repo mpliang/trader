@@ -1,5 +1,5 @@
-app.controller('tradeCtrl', function ($scope, $http, $stateParams, $state, $window) {
-  $http.get('http://localhost:3000/user/' + $stateParams.userId)
+app.controller('tradeCtrl', function ($scope, $http, $state, $window) {
+  $http.get('http://localhost:3000/user/' + localStorage['userID'])
     .then(function(data) {
       $scope.userItemList = data.data.items;
     })

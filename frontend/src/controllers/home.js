@@ -1,5 +1,7 @@
 app.controller('homeCtrl', function ($scope, $window, $http) {
 
+  $scope.currentUser = localStorage['userID'];
+
   // $scope.trade = function(item) {
   //
   //
