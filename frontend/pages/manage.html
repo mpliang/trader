@@ -6,18 +6,18 @@
         <form class="form-horizontal" role="form">
           <div class="form-group">
             <div class="col-sm-12">
-              <input autofocus class="form-control" id="name" ng-model="item.name" type="text" placeholder="Item Name">
+              <input autofocus class="form-control" id="name" ng-model="item.name" placeholder="Item Name" type="text">
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-sm-12">
-              <input autofocus class="form-control" id="value" ng-model="item.value" type="number" placeholder="Value">
+              <input autofocus class="form-control" id="value" ng-model="item.value" placeholder="Value" type="number">
             </div>
           </div>
           <div class="form-group">
             <div class="col-sm-12">
-              <input autofocus class="form-control" id="picture" ng-model="item.picture" type="text" placeholder="Picture URL">
+              <input autofocus class="form-control" id="picture" ng-model="item.picture" placeholder="Picture URL" type="text">
             </div>
           </div>
           <div class="form-group">
@@ -38,20 +38,21 @@
       <div class="row">
         <div class="col-sm-6 col-md-4" ng-repeat="n in itemList track by $index">
           <div class="thumbnail">
-            <img ng-src="{{n.picture}}" id="itemThumb">
+            <img id="itemThumb" ng-src="{{n.picture}}">
             <div class="caption">
               <h3>{{n.name}}</h3>
               <p>
                 <strong>Value:</strong>
                 {{n.value | currency}}</p>
-            <p>
-              <strong>Description:</strong>
-              {{n.description}}</p>
+              <p>
+                <strong>Description:</strong>
+                {{n.description}}</p>
               <br>
-              <p>Available for trade? 
+              <p>Available for trade?
                 {{n.isAvailable}}
               </p>
-              <button class="btn btn-primary" ng-click="toggle(n._id)">Available</button>
+              <button class="btn btn-primary" ng-click="toggle(n._id)" ng-show="n.isAvailable===false">Make Available</button>
+              <button class="btn btn-primary" ng-click="toggle(n._id)" ng-show="n.isAvailable===true">Make Unavailable</button>
               <button class="btn btn-danger" ng-click="delete(n._id)">Remove</button>
             </div>
           </div>
