@@ -25,8 +25,8 @@ app.controller('tradeCtrl', function ($scope, $http, $stateParams, $state, $wind
       })
   }
 
-  $scope.delete = function(aptId) {
-    $http.delete('http://localhost:3000/managers/apartment/' + aptId)
+  $scope.delete = function(itemId) {
+    $http.delete('http://localhost:3000/item/' + itemId)
       .then(function(data) {
         console.log(data);
         $state.go($state.current, {}, {reload: true});
