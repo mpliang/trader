@@ -10,6 +10,8 @@ app.controller('manageCtrl', function ($scope, $http, $state) {
     })
 
   $scope.addItem = function (item) {
+    item['owner'] = 'mike';
+    item['username'] ='mikeker3';
     console.log(item);
     $http.post('http://localhost:3000/item', item)
       .then(function (data) {
@@ -48,7 +50,5 @@ app.controller('manageCtrl', function ($scope, $http, $state) {
       console.log(error);
     });
   }
-
-
 
 });
