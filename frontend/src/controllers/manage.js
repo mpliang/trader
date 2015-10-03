@@ -11,6 +11,8 @@ app.controller('manageCtrl', function ($scope, $http, $state) {
 
   $scope.addItem = function (item) {
     console.log(item);
+    item['owner'] = localStorage['userID'];
+    console.log(item['owner']);
     $http.post('http://localhost:3000/item', item)
       .then(function (data) {
         console.log(data);

@@ -44,14 +44,15 @@
               <p>
                 <strong>Value:</strong>
                 {{n.value | currency}}</p>
+            <p>
               <strong>Description:</strong>
-              <p>{{n.description}}</p>
+              {{n.description}}</p>
               <br>
-              <p>Available:
+              <p>Available for trade? 
                 {{n.isAvailable}}
               </p>
               <button class="btn btn-primary" ng-click="toggle(n._id)">Available</button>
-              <button class="btn btn-danger" ng-click="delete(n._id)">Delete</button>
+              <button class="btn btn-danger" ng-click="delete(n._id)">Remove</button>
             </div>
           </div>
         </div>

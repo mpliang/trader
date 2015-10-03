@@ -22,7 +22,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     controller: 'manageCtrl'
   })
   .state('tradeItem', {
-    url: '/user/:propertyId',
+    url: '/user/:userId',
     templateUrl: '../pages/tradeItem.html',
     controller: 'tradeCtrl'
   })

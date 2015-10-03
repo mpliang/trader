@@ -11,7 +11,7 @@ app.controller('homeCtrl', function ($scope, $window, $http) {
 
     $http.get('http://localhost:3000/item')
       .then(function(data) {
-        console.log(data);
+        console.log(data.data);
         $scope.allItems = data.data;
       })
       .catch(function(error) {

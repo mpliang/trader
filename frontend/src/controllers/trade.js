@@ -1,9 +1,7 @@
 app.controller('tradeCtrl', function ($scope, $http, $stateParams, $state, $window) {
-
-
   $http.get('http://localhost:3000/user/' + $stateParams.userId)
     .then(function(data) {
-      console.log(data);
+      $scope.userItemList = data.data.items;
     })
     .catch(function(error) {
       console.log(error);
@@ -18,22 +16,32 @@ app.controller('tradeCtrl', function ($scope, $http, $stateParams, $state, $wind
     //   .catch(function(error) {
     //     console.log(error);
     //   });
+    $http.put('http://localhost:3000/item/' + itemId + '/toggleAvailable')
+    .then(function (data) {
+      console.log(data);
+      $state.go($state.current, {}, {
+        reload: true
+      });
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
       $window.swal({
         title: 'Trade',
-        text: 'Select an item to trade',
+        text: 'Item offered for trade!',
         type: 'success'
       })
   }
 
-  $scope.delete = function(itemId) {
-    $http.delete('http://localhost:3000/item/' + itemId)
-      .then(function(data) {
-        console.log(data);
-        $state.go($state.current, {}, {reload: true});
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  }
+  // $scope.delete = function(itemId) {
+  //   $http.delete('http://localhost:3000/item/' + itemId)
+  //     .then(function(data) {
+  //       console.log(data);
+  //       $state.go($state.current, {}, {reload: true});
+  //     })
+  //     .catch(function(error) {
+  //       console.log(error);
+  //     });
+  // }
 
 });
