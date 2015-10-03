@@ -7,10 +7,10 @@ app.config(function ($stateProvider, $urlRouterProvider) {
     controller: 'homeCtrl'
   })
   .state('login', {
-    url: '/',
+    url: '/login',
     templateUrl: '../pages/login.html',
     controller: 'loginCtrl'
-  })    
+  })
   .state('register', {
     url: '/register',
     templateUrl: '../pages/register.html',
