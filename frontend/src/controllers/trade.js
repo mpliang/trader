@@ -24,6 +24,14 @@ app.controller('tradeCtrl', function ($scope, $http, $stateParams, $state, $wind
     _id: '1231232kjfkdlsd'
   }];
 
+  $http.get('http://localhost:3000/item/' + $stateParams.userId)
+    .then(function(data) {
+      console.log(data);
+    })
+    .catch(function(error) {
+      console.log(error);
+    })
+
   $scope.trade = function(itemId) {
     // $http.put('http://localhost:3000/managers/apartment/' + aptId + '/toggleAvail')
     //   .then(function(data) {
