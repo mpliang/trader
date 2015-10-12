@@ -3,5 +3,4 @@ app.controller('NavCtrl', function($rootScope, $scope, $state, Auth){
     Auth.logout()
     $rootScope.auth = false
   }
-  $rootScope.auth = localStorage['userID']
 });
